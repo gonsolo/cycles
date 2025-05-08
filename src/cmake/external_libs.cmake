@@ -197,7 +197,8 @@ if(WITH_USD)
       add_bundled_libraries(python/${PYTHON_VERSION_NO_DOTS}/bin)
     endif()
   else()
-    find_package(PythonLibsUnix REQUIRED)
+	  #find_package(PythonLibsUnix REQUIRED)
+	  find_package(Python REQUIRED)
   endif()
 endif()
 
@@ -213,7 +214,7 @@ if(MSVC AND EXISTS ${_cycles_lib_dir})
   set(ZLIB_DIR ${_cycles_lib_dir}/zlib)
   set(ZLIB_FOUND ON)
 elseif(NOT APPLE)
-  find_package(ZLIB REQUIRED)
+	find_package(ZLIB REQUIRED)
 endif()
 
 ###########################################################################
