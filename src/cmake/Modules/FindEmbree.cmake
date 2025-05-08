@@ -24,6 +24,7 @@ endif()
 set(_embree_SEARCH_DIRS
   ${EMBREE_ROOT_DIR}
   /opt/lib/embree
+  /usr/include
 )
 
 find_path(EMBREE_INCLUDE_DIR
@@ -37,6 +38,7 @@ find_path(EMBREE_INCLUDE_DIR
 )
 
 if(EXISTS ${EMBREE_INCLUDE_DIR}/embree4/rtcore_config.h)
+    message(STATUS "gonso: ${EMBREE_INCLUDE_DIR}")
   set(EMBREE_MAJOR_VERSION 4)
 else()
   set(EMBREE_MAJOR_VERSION 3)

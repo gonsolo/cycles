@@ -110,7 +110,7 @@ set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS
 # Options.
 
 # Use precompiled library dependencies
-option(WITH_LIBS_PRECOMPILED        "Use precompiled library dependencies" ON)
+option(WITH_LIBS_PRECOMPILED        "Use precompiled library dependencies" OFF)
 
 # Library dependencies
 option(WITH_CYCLES_ALEMBIC          "Build with Alembic procedural support" ON)
@@ -121,9 +121,9 @@ option(WITH_CYCLES_OPENIMAGEDENOISE "Build with OpenImageDenoise support" ON)
 option(WITH_CYCLES_OPENSUBDIV       "Build with OpenSubdiv support" ON)
 option(WITH_CYCLES_OPENVDB          "Build with OpenVDB support" ON)
 option(WITH_CYCLES_PUGIXML          "Build with XML support" ON)
-option(WITH_CYCLES_NANOVDB          "Build with NanoVDB support" ON)
+option(WITH_CYCLES_NANOVDB          "Build with NanoVDB support" OFF)
 option(WITH_CYCLES_OSL              "Build with OSL support" ON)
-option(WITH_CYCLES_USD              "Build with USD support" ON)
+option(WITH_CYCLES_USD              "Build with USD support" OFF)
 
 option(WITH_LEGACY_LIBRARIES        "Build with older VFX platform 2024 libraries, for compatibility with Houdini or USD" OFF)
 
@@ -223,7 +223,7 @@ oneAPI targets to build AOT binaries for"
 endif()
 
 # Hydra Render Delegate
-option(WITH_CYCLES_HYDRA_RENDER_DELEGATE "Build Cycles Hydra render delegate" ON)
+option(WITH_CYCLES_HYDRA_RENDER_DELEGATE "Build Cycles Hydra render delegate" OFF)
 
 # Error Checking
 option(WITH_STRICT_BUILD_OPTIONS "When requirements for a build option are not met, error instead of disabling the option" OFF)
@@ -233,7 +233,7 @@ option(WITH_STRICT_BUILD_OPTIONS "When requirements for a build option are not m
 
 include(CheckCXXCompilerFlag)
 include(detect_platform)
-#include(external_libs)
+include(external_libs)
 include(configure_build)
 include(CTest)
 
